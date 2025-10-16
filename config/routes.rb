@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #index
   get "restaurants" , to: "restaurants#index"
   #create
-  get "restaurants/new", to: "restaurants#new"
+  get "restaurants/new", to: "restaurants#new", as: :new_restaurant
   post "restaurants", to: "restaurants#create"
   #read
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
