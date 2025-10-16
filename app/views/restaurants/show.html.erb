@@ -20,4 +20,17 @@
   </p>
 </div>
 
-<%= link_to "Back to restaurants", restaurants_path %>
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+  <li>
+    <%= review.content %>,
+    Rating: <%= review.rating %>/5
+  </li>
+  <% end %>
+</ul>
+
+<div>
+  <%= link_to "Back to restaurants", restaurants_path %> |
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+</div>
